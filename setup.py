@@ -148,6 +148,9 @@ gdal_config = CConfig(os.environ.get('GDAL_CONFIG', 'gdal-config'))
 
 extra_compile_args = ['-fPIC', '-O3', '-std=c++11', '-DBOOST_LOG_DYN_LINK']
 
+if gdal_config.version()[0] == 2:
+    extra_compile_args.append('-D GDAL2')
+
 extra_link_args = gdal_config.extra_link_args
 
 if sys.platform == 'darwin':

@@ -43384,6 +43384,7 @@ namespace cimg_library_suffixed {
             if (is_axes) { if (visible_cursor) { disp.hide_mouse(); visible_cursor = false; }}
             else { if (!visible_cursor) { disp.show_mouse(); visible_cursor = true; }}
             const int d = (depth()>1)?depth():0;
+            #undef _X
             int
               _X = (int)X, _Y = (int)Y, _Z = (int)Z,
               w = disp.width(), W = width() + d,
